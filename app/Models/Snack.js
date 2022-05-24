@@ -11,7 +11,7 @@ export class Snack {
 
   get Template() {
     let template = `
-    <div class="col-6">
+    <div onclick='app.snacksController.purchaseProduct("${this.name}")' class="col-6">
     <div class="product-card">
       <img src="${this.img}" alt="">
       <h3>${this.name}</h3>

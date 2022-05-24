@@ -10,6 +10,7 @@ function _draw() {
 
 function _drawMoney() {
   document.getElementById("money").innerText = ProxyState.money.toFixed(2).toString()
+  document.getElementById("money-made").innerText = ProxyState.moneyMade.toFixed(2).toString()
 }
 
 
@@ -19,10 +20,16 @@ export class SnacksController {
     _draw()
     _drawMoney()
     ProxyState.on("money", _drawMoney)
+    ProxyState.on("moneyMade", _drawMoney)
   }
 
   generateMoney() {
     snacksService.generateMoney()
+  }
+
+  purchaseProduct(product) {
+    console.log(product);
+    snacksService.purchaseProduct(product)
   }
 
 }
